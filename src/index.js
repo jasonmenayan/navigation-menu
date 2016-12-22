@@ -30,6 +30,12 @@ const ContactUs = () => (
 	</div>
 )
 
+function nameToPath(name) {
+	let path = '/'
+	path += name.toLowerCase().split(' ').join('')
+	return path
+}
+
 class Navigation extends React.Component {
 
 	constructor() {
@@ -44,27 +50,23 @@ class Navigation extends React.Component {
 	}
 
 	render() {
-		function nameToPath(name) {
-			let path = '/'
-			path += name.toLowerCase().split(' ').join('')
-			return path
-		}
 		let buttons = this.state.tabs.map((tab, index) => {
 			return (
 				<li key={index} className={index === this.state.chosenIndex ? 'active' : 'inactive'} onClick={event => this.selectTab(event, index)}><Link to={nameToPath(tab)}>{tab}</Link></li>
 			)
 		})
-
 		return (
 			<BrowserRouter>
-				<ul>
-					{buttons}
-				</ul>
-				<Match exactly pattern="/" component={Home} />
-	      <Match pattern="/services" component={Services} />
-	      <Match pattern="/about" component={About} />
-	      <Match pattern="/contactus" component={ContactUs} />
-	      <Miss component={Home} />
+				<div>
+					<ul>
+						{buttons}
+					</ul>
+					<Match exactly pattern="/" component={Home} />
+		      <Match pattern="/services" component={Services} />
+		      <Match pattern="/about" component={About} />
+		      <Match pattern="/contactus" component={ContactUs} />
+		      <Miss component={Home} />
+		    </div>
 			</BrowserRouter>
 		)
 	}

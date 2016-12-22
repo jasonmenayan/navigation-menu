@@ -1,5 +1,5 @@
 html{
-    font:14px normal Arial, sans-serif;
+    font:24px normal Arial, sans-serif;
     color:#626771;
     background-color:#fff;
 }
@@ -19,20 +19,37 @@ ul li{
     padding: 10px 20px;
     cursor:pointer;
     background-color:#eee;
+    text-decoration: none;
     color:#7B8585;
     transition:0.3s;
+    font: bold 14px Arial;
 }
 
-ul li:hover{
+ul li:link, ul li:visited {
+    color: #fff;
+}
+
+ul li:hover {
     background-color:#beecea;
 }
 
-ul li.active{
-    color:#fff;
+ul li.active {
     background-color:#41c7c2;
 }
 
-p{
-    padding-top:15px;
-    font-size:12px;
+a {
+    text-decoration: none;
+    color: #7b8585;
 }
+
+a.active {
+    color: #fff;
+}
+
+p {
+    padding-top:15px;
+    font-size:16px;
+}
+
+
+
