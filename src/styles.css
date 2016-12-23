@@ -25,10 +25,6 @@ ul li{
     font: bold 14px Arial;
 }
 
-ul li:link, ul li:visited {
-    color: #fff;
-}
-
 ul li:hover {
     background-color:#beecea;
 }
@@ -42,7 +38,7 @@ a {
     color: #7b8585;
 }
 
-a.active {
+ul li.active a {
     color: #fff;
 }
 
